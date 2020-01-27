@@ -1,19 +1,14 @@
 package com.fastcode.ldapimport.repository;
 
-import java.sql.*;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 
 @Repository
@@ -190,6 +185,14 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 
+		finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
 		return false;
 	}
 
@@ -223,17 +226,15 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 
+		finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
 		return (ArrayList<String>) columnNames;
 	}
 
-//    private Timestamp convertISO8601ToTimestamp(String ISO8601String) {
-//        DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-//        Date date = null;
-//        try {
-//            date = df1.parse(ISO8601String);
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
-//        return new Timestamp(date.getTime());
-//    }
 }

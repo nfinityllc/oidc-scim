@@ -6,12 +6,13 @@ import com.fastcode.ldapimport.repository.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.MessageFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.sql.Timestamp;
 
 @Component
 public class CommandLineAppStartupRunner implements CommandLineRunner {

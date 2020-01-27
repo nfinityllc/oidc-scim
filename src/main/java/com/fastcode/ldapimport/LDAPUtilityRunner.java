@@ -1,20 +1,16 @@
 package com.fastcode.ldapimport;
 
+import com.fastcode.ldapimport.info.LDAPInput;
+import org.springframework.stereotype.Component;
+
+import javax.naming.Context;
+import javax.naming.NamingEnumeration;
+import javax.naming.NamingException;
+import javax.naming.directory.*;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import javax.naming.Context;
-import javax.naming.NamingEnumeration;
-import javax.naming.NamingException;
-import javax.naming.directory.Attribute;
-import javax.naming.directory.Attributes;
-import javax.naming.directory.DirContext;
-import javax.naming.directory.InitialDirContext;
-import javax.naming.directory.SearchControls;
-import javax.naming.directory.SearchResult;
-import org.springframework.stereotype.Component;
-import com.fastcode.ldapimport.info.LDAPInput;
 
 @Component
 public class LDAPUtilityRunner {

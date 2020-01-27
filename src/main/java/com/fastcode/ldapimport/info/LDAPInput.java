@@ -73,5 +73,4 @@ public class LDAPInput {
 
 	private String authenticationTable;
 
-
 }
